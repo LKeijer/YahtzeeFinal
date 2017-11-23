@@ -10,9 +10,19 @@ using System.Windows.Forms;
 
 namespace Yahtzee
 {
-    public partial class Form1 : Form
+    public partial class YahtzeeMainForm : Form
     {
-        public Form1()
+
+        #region Declarations
+        #endregion
+
+
+        private void RollDice()
+        {
+
+        }
+
+        public YahtzeeMainForm()
         {
             InitializeComponent();
         }
