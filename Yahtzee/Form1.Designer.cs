@@ -67,6 +67,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
             // 
             // pictureBox2
             // 
@@ -170,7 +171,7 @@
             "High straight.",
             "Four of a kind.",
             "Yahtzee.",
-            "",
+            "Chance",
             "Ones",
             "Twos",
             "Threes",
@@ -195,7 +196,7 @@
             "High straight.",
             "Four of a kind.",
             "Yahtzee.",
-            "",
+            "Chance",
             "Ones",
             "Twos",
             "Threes",
@@ -243,6 +244,7 @@
             this.rollDiceBtn.TabIndex = 15;
             this.rollDiceBtn.Text = "Roll Dice!";
             this.rollDiceBtn.UseVisualStyleBackColor = true;
+            this.rollDiceBtn.Click += new System.EventHandler(this.rollDiceBtn_Click);
             // 
             // nextPlayerBtn
             // 
@@ -252,6 +254,7 @@
             this.nextPlayerBtn.TabIndex = 16;
             this.nextPlayerBtn.Text = "Next Player";
             this.nextPlayerBtn.UseVisualStyleBackColor = true;
+            this.nextPlayerBtn.Click += new System.EventHandler(this.nextPlayerBtn_Click);
             // 
             // diceScoreLbl
             // 
