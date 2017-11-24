@@ -37,7 +37,6 @@ namespace Yahtzee
             rngeesus = new Random();
             diceImages = new Image[8];
             dice = new int[5] { 0, 0, 0, 0, 0 };
-            savedDice = new int[6] { 0, 0, 0, 0, 0, 0 };
             diceResults = new int[6] { 0, 0, 0, 0, 0, 0 };
             LoadImages();
             player1 = true;
@@ -142,7 +141,13 @@ namespace Yahtzee
         #region InsertRollsIntoResults() adds the 'saved' dice into the diceResults[]
         private void InsertRollsIntoResults()
         {
-
+            for (int i = 0; i < diceImages.Length; i++)
+            {
+                if (pictureBox6.Image == diceImages[i])
+                {
+                    diceResults[diceImages[i]] = diceImages[i];
+                }
+            }
         }
         #endregion
 
