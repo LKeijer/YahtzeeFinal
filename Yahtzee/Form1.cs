@@ -37,7 +37,7 @@ namespace Yahtzee
             rngeesus = new Random();
             diceImages = new Image[8];
             dice = new int[5] { 0, 0, 0, 0, 0 };
-            savedDice = new int[6] { 0, 0, 0, 0, 0. 0 };
+            savedDice = new int[6] { 0, 0, 0, 0, 0, 0 };
             diceResults = new int[6] { 0, 0, 0, 0, 0, 0 };
             LoadImages();
             player1 = true;
