@@ -141,12 +141,129 @@ namespace Yahtzee
         #region InsertRollsIntoResults() adds the 'saved' dice into the diceResults[]
         private void InsertRollsIntoResults()
         {
-            for (int i = 0; i < diceImages.Length; i++)
+            if (pictureBox6.Image == diceImages[1])
             {
-                if (pictureBox6.Image == diceImages[i])
-                {
-                    diceResults[diceImages[i]] = diceImages[i];
-                }
+                diceResults[0]++;
+            }
+            else if (pictureBox6.Image == diceImages[2])
+            {
+                diceResults[1]++;
+            }
+            else if (pictureBox6.Image == diceImages[3])
+            {
+                diceResults[2]++;
+            }
+            else if (pictureBox6.Image == diceImages[4])
+            {
+                diceResults[3]++;
+            }
+            else if (pictureBox6.Image == diceImages[5])
+            {
+                diceResults[4]++;
+            }
+            else if (pictureBox6.Image == diceImages[6])
+            {
+                diceResults[5]++;
+            }
+
+            if (pictureBox7.Image == diceImages[1])
+            {
+                diceResults[0]++;
+            }
+            else if (pictureBox7.Image == diceImages[2])
+            {
+                diceResults[1]++;
+            }
+            else if (pictureBox7.Image == diceImages[3])
+            {
+                diceResults[2]++;
+            }
+            else if (pictureBox7.Image == diceImages[4])
+            {
+                diceResults[3]++;
+            }
+            else if (pictureBox7.Image == diceImages[5])
+            {
+                diceResults[4]++;
+            }
+            else if (pictureBox7.Image == diceImages[6])
+            {
+                diceResults[5]++;
+            }
+
+            if (pictureBox8.Image == diceImages[1])
+            {
+                diceResults[0]++;
+            }
+            else if (pictureBox8.Image == diceImages[2])
+            {
+                diceResults[1]++;
+            }
+            else if (pictureBox8.Image == diceImages[3])
+            {
+                diceResults[2]++;
+            }
+            else if (pictureBox8.Image == diceImages[4])
+            {
+                diceResults[3]++;
+            }
+            else if (pictureBox8.Image == diceImages[5])
+            {
+                diceResults[4]++;
+            }
+            else if (pictureBox8.Image == diceImages[6])
+            {
+                diceResults[5]++;
+            }
+
+            if (pictureBox9.Image == diceImages[1])
+            {
+                diceResults[0]++;
+            }
+            else if (pictureBox9.Image == diceImages[2])
+            {
+                diceResults[1]++;
+            }
+            else if (pictureBox9.Image == diceImages[3])
+            {
+                diceResults[2]++;
+            }
+            else if (pictureBox9.Image == diceImages[4])
+            {
+                diceResults[3]++;
+            }
+            else if (pictureBox9.Image == diceImages[5])
+            {
+                diceResults[4]++;
+            }
+            else if (pictureBox9.Image == diceImages[6])
+            {
+                diceResults[5]++;
+            }
+
+            if (pictureBox10.Image == diceImages[1])
+            {
+                diceResults[0]++;
+            }
+            else if (pictureBox10.Image == diceImages[2])
+            {
+                diceResults[1]++;
+            }
+            else if (pictureBox10.Image == diceImages[3])
+            {
+                diceResults[2]++;
+            }
+            else if (pictureBox10.Image == diceImages[4])
+            {
+                diceResults[3]++;
+            }
+            else if (pictureBox10.Image == diceImages[5])
+            {
+                diceResults[4]++;
+            }
+            else if (pictureBox10.Image == diceImages[6])
+            {
+                diceResults[5]++;
             }
         }
         #endregion
