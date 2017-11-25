@@ -22,10 +22,6 @@ namespace Yahtzee
         bool player1;
         bool player2;
         int rollCounter;
-        int[] savedDice;
-
-        int pBBox;
-
         bool onePair, twoPair, threeKind, fullHouse, lowStraight, highStraight, fourKind, yahtzee, ones, twos, threes, fours, fives, sixes, chance;
 
 
@@ -42,11 +38,7 @@ namespace Yahtzee
             player1 = true;
             player2 = false;
             rollCounter = 0;
-
-            #region Setting all the bool values of possible combinations to false
-            bool onePair = false; bool twoPair = false; bool threeKind = false; bool fullHouse = false; bool lowStraight = false; bool highStraight = false; bool fourKind = false;
-            bool yahtzee = false; bool ones = false; bool twos = false; bool threes = false; bool fours = false; bool fives = false; bool sixes = false; bool chance = false;
-            #endregion
+            ClearCombo();
         }
 
         #region LoadImages() loads images into diceImages[]
@@ -92,7 +84,7 @@ namespace Yahtzee
             else
             {
                 rollDiceBtn.Hide();
-                nextPlayerBtn.Show();
+                doneBtn.Show();
             }
         }
         #endregion
@@ -122,6 +114,7 @@ namespace Yahtzee
             pictureBox10.Image = null;
         }
         #endregion
+
         #region Reset() resets the corresponding int[]'s for a fresh roll
         private void Reset()
         {
@@ -134,6 +127,14 @@ namespace Yahtzee
             {
                 diceResults[i] = 0;
             }
+        }
+        #endregion
+
+        #region ClearCombo() Sets bool values of possible combinations to false for next player.
+        private void ClearCombo()
+        {
+            onePair = false; twoPair = false; threeKind = false; fullHouse = false; lowStraight = false; highStraight = false; fourKind = false;
+             yahtzee = false;  ones = false;  twos = false;  threes = false;  fours = false;  fives = false;  sixes = false;  chance = false;
         }
         #endregion
 
@@ -265,11 +266,16 @@ namespace Yahtzee
                 diceResults[5]++;
             }
         }
+
+
+
         #endregion
 
         #region DiceCombination() sets possible combination to true
         private void DiceCombination()
         {
+            chance = true;
+
             for (int i = 0; i < diceResults.Length; i++)
             {
                 if (diceResults[i] == 2)
@@ -321,6 +327,19 @@ namespace Yahtzee
                 {
                     highStraight = true;
                 }
+
+                if (diceResults[0] >= 1)
+                    ones = true;
+                if (diceResults[1] >= 1)
+                    twos = true;
+                if (diceResults[2] >= 1)
+                    threes = true;
+                if (diceResults[3] >= 1)
+                    fours = true;
+                if (diceResults[4] >= 1)
+                    fives = true;
+                if (diceResults[5] >= 1)
+                    sixes = true;
             }
         }
         #endregion
@@ -349,8 +368,6 @@ namespace Yahtzee
         }
         #endregion
 
-        
-
 
         private void rollDiceBtn_Click(object sender, EventArgs e)
         {
@@ -359,23 +376,30 @@ namespace Yahtzee
             Counter();
         }
 
-        private void nextPlayerBtn_Click(object sender, EventArgs e)
+        private void doneBtn_Click(object sender, EventArgs e)
         {
-
             if (pictureBox1.Image == null && pictureBox2.Image == null && pictureBox3.Image == null && pictureBox4.Image == null && pictureBox5.Image == null)
             {
                 InsertRollsIntoResults();
                 DiceCombination();
                 DiceScore();
-                nextPlayerBtn.Hide();
-                rollDiceBtn.Show();
+                nextPlayerBtn.Show();
+                doneBtn.Hide();
+                optionsGroupBox.Show();
 
-                NextPlayer();
             }
             else
             {
                 MessageBox.Show("Please select all the dice");
             }
+        }
+
+        private void nextPlayerBtn_Click(object sender, EventArgs e)
+        {
+            ClearCombo();
+            NextPlayer();
+            nextPlayerBtn.Hide();
+            rollDiceBtn.Show();
         }
         #region All the pictureBox click events still have to come up with a way to turn this into a function
         private void pictureBox1_Click_1(object sender, EventArgs e)

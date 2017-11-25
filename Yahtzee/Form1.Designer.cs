@@ -46,6 +46,8 @@
             this.rollDiceBtn = new System.Windows.Forms.Button();
             this.nextPlayerBtn = new System.Windows.Forms.Button();
             this.diceScoreLbl = new System.Windows.Forms.Label();
+            this.optionsGroupBox = new System.Windows.Forms.GroupBox();
+            this.doneBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -188,9 +190,9 @@
             "Fives",
             "Sixes",
             "Chance"});
-            this.checkedListBox1.Location = new System.Drawing.Point(37, 90);
+            this.checkedListBox1.Location = new System.Drawing.Point(12, 90);
             this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(120, 244);
+            this.checkedListBox1.Size = new System.Drawing.Size(140, 244);
             this.checkedListBox1.TabIndex = 10;
             // 
             // checkedListBox2
@@ -215,7 +217,7 @@
             "Chance"});
             this.checkedListBox2.Location = new System.Drawing.Point(602, 90);
             this.checkedListBox2.Name = "checkedListBox2";
-            this.checkedListBox2.Size = new System.Drawing.Size(120, 244);
+            this.checkedListBox2.Size = new System.Drawing.Size(140, 244);
             this.checkedListBox2.TabIndex = 11;
             // 
             // currentPlayerLbl
@@ -230,7 +232,7 @@
             // player1Label
             // 
             this.player1Label.AutoSize = true;
-            this.player1Label.Location = new System.Drawing.Point(37, 71);
+            this.player1Label.Location = new System.Drawing.Point(12, 74);
             this.player1Label.Name = "player1Label";
             this.player1Label.Size = new System.Drawing.Size(45, 13);
             this.player1Label.TabIndex = 13;
@@ -275,12 +277,35 @@
             this.diceScoreLbl.TabIndex = 17;
             this.diceScoreLbl.Text = "Dice Combo ";
             // 
+            // optionsGroupBox
+            // 
+            this.optionsGroupBox.Location = new System.Drawing.Point(177, 343);
+            this.optionsGroupBox.Name = "optionsGroupBox";
+            this.optionsGroupBox.Size = new System.Drawing.Size(399, 184);
+            this.optionsGroupBox.TabIndex = 18;
+            this.optionsGroupBox.TabStop = false;
+            this.optionsGroupBox.Text = "Possible combinations:";
+            this.optionsGroupBox.Visible = false;
+            // 
+            // doneBtn
+            // 
+            this.doneBtn.Location = new System.Drawing.Point(339, 171);
+            this.doneBtn.Name = "doneBtn";
+            this.doneBtn.Size = new System.Drawing.Size(75, 75);
+            this.doneBtn.TabIndex = 19;
+            this.doneBtn.Text = "Im done!";
+            this.doneBtn.UseVisualStyleBackColor = true;
+            this.doneBtn.Visible = false;
+            this.doneBtn.Click += new System.EventHandler(this.doneBtn_Click);
+            // 
             // YahtzeeMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(784, 539);
+            this.Controls.Add(this.doneBtn);
+            this.Controls.Add(this.optionsGroupBox);
             this.Controls.Add(this.diceScoreLbl);
             this.Controls.Add(this.nextPlayerBtn);
             this.Controls.Add(this.rollDiceBtn);
@@ -338,6 +363,8 @@
         private System.Windows.Forms.Button rollDiceBtn;
         private System.Windows.Forms.Button nextPlayerBtn;
         private System.Windows.Forms.Label diceScoreLbl;
+        private System.Windows.Forms.GroupBox optionsGroupBox;
+        private System.Windows.Forms.Button doneBtn;
     }
 }
 
