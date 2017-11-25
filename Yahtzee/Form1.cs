@@ -113,14 +113,13 @@ namespace Yahtzee
                 player2 = false;
                 currentPlayerLbl.Text = "Current Player: 1";
             }
+            Reset();
+            rollCounter = 0;
             pictureBox6.Image = null;
             pictureBox7.Image = null;
             pictureBox8.Image = null;
             pictureBox9.Image = null;
             pictureBox10.Image = null;
-            Reset();
-            rollCounter = 0;
-
         }
         #endregion
         #region Reset() resets the corresponding int[]'s for a fresh roll
@@ -271,57 +270,57 @@ namespace Yahtzee
         #region DiceCombination() sets possible combination to true
         private void DiceCombination()
         {
-            for(int i = 0; i < diceResults.Length; i++)
+            for (int i = 0; i < diceResults.Length; i++)
             {
-                if(diceResults[i] == 2)
+                if (diceResults[i] == 2)
                 {
                     onePair = true;
-                    for (int j = i+1; j < diceResults.Length; j++) // loops through the diceResults[] again, starting at the index the pair was found (i+1)
+                    for (int j = i + 1; j < diceResults.Length; j++) // loops through the diceResults[] again, starting at the index the pair was found (i+1)
                     {
-                        if(diceResults[j] == 2)
+                        if (diceResults[j] == 2)
                         {
                             twoPair = true;
                         }
                     }
                 }
 
-                if(diceResults[i] == 3)
+                if (diceResults[i] == 3)
                 {
                     threeKind = true;
-                    for(int j = 0; j < diceResults.Length; j++) // loops through the diceResults[] again, starting at [0] looking for a pair
+                    for (int j = 0; j < diceResults.Length; j++) // loops through the diceResults[] again, starting at [0] looking for a pair
                     {
-                        if(diceResults[j] == 2)
+                        if (diceResults[j] == 2)
                         {
                             fullHouse = true;
                         }
                     }
                 }
-                if(diceResults[i] == 5)
+                if (diceResults[i] == 5)
                 {
                     yahtzee = true;
                 }
-            }
-                    // Possible combinations for the low straight
-            if (diceResults[0] == 1 && diceResults[1] == 1 && diceResults[2] == 1 && diceResults[3] == 1)
-            {
-                lowStraight = true;
-            }
-            else if (diceResults[4] == 1 && diceResults[1] == 1 && diceResults[2] == 1 && diceResults[3] == 1)
-            {
-                lowStraight = true;
-            }
-            else if (diceResults[2] == 1 && diceResults[3] == 1 && diceResults[4] == 1 && diceResults[5] == 1)
-            {
-                lowStraight = true;
-            }
-                    // Possible combinations for the high straight
-            if(diceResults[0] == 1 && diceResults[1] == 1 && diceResults[2] == 1 && diceResults[3] == 1 && diceResults[4] == 1)
-            {
-                highStraight = true;
-            }
-            else if (diceResults[5] == 1 && diceResults[1] == 1 && diceResults[2] == 1 && diceResults[3] == 1 && diceResults[4] == 1)
-            {
-                highStraight = true;
+                // Possible combinations for the low straight
+                if (diceResults[0] == 1 && diceResults[1] == 1 && diceResults[2] == 1 && diceResults[3] == 1)
+                {
+                    lowStraight = true;
+                }
+                else if (diceResults[4] == 1 && diceResults[1] == 1 && diceResults[2] == 1 && diceResults[3] == 1)
+                {
+                    lowStraight = true;
+                }
+                else if (diceResults[2] == 1 && diceResults[3] == 1 && diceResults[4] == 1 && diceResults[5] == 1)
+                {
+                    lowStraight = true;
+                }
+                // Possible combinations for the high straight
+                if (diceResults[0] == 1 && diceResults[1] == 1 && diceResults[2] == 1 && diceResults[3] == 1 && diceResults[4] == 1)
+                {
+                    highStraight = true;
+                }
+                else if (diceResults[5] == 1 && diceResults[1] == 1 && diceResults[2] == 1 && diceResults[3] == 1 && diceResults[4] == 1)
+                {
+                    highStraight = true;
+                }
             }
         }
         #endregion
