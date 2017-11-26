@@ -39,6 +39,7 @@ namespace Yahtzee
             player2 = false;
             rollCounter = 0;
             ClearCombo();
+            SetGroupBox();
         }
 
         #region LoadImages() loads images into diceImages[]
@@ -135,6 +136,39 @@ namespace Yahtzee
         {
             onePair = false; twoPair = false; threeKind = false; fullHouse = false; lowStraight = false; highStraight = false; fourKind = false;
              yahtzee = false;  ones = false;  twos = false;  threes = false;  fours = false;  fives = false;  sixes = false;  chance = false;
+        }
+        #endregion
+
+        #region SetGroupBox() Sets visibility of radionbuttons to false
+        private void SetGroupBox()
+        {
+            foreach(Control c in optionsGroupBox.Controls)
+            {
+                if(c is RadioButton)
+                {
+                    c.Hide();
+
+                   /* var _rb = (RadioButton)c;  <--- headaches
+                    if (_rb.Checked)
+                    {
+                        _rb.Checked = false;
+                    }*/
+
+                }
+            }
+        }
+        #endregion
+
+        #region UserSelects() Lets the user choose which dice combination is to be saved in the corresponding checkedlistbox
+        private void UserSelects()
+        {
+            if(player1 == true)
+            {
+                if(onePair == true)
+                {
+                    checkedListBox1.
+                }
+            }
         }
         #endregion
 
@@ -310,11 +344,11 @@ namespace Yahtzee
                 {
                     lowStraight = true;
                 }
-                else if (diceResults[4] == 1 && diceResults[1] == 1 && diceResults[2] == 1 && diceResults[3] == 1)
+                if (diceResults[4] == 1 && diceResults[1] == 1 && diceResults[2] == 1 && diceResults[3] == 1)
                 {
                     lowStraight = true;
                 }
-                else if (diceResults[2] == 1 && diceResults[3] == 1 && diceResults[4] == 1 && diceResults[5] == 1)
+                if (diceResults[2] == 1 && diceResults[3] == 1 && diceResults[4] == 1 && diceResults[5] == 1)
                 {
                     lowStraight = true;
                 }
@@ -323,7 +357,7 @@ namespace Yahtzee
                 {
                     highStraight = true;
                 }
-                else if (diceResults[5] == 1 && diceResults[1] == 1 && diceResults[2] == 1 && diceResults[3] == 1 && diceResults[4] == 1)
+                if (diceResults[5] == 1 && diceResults[1] == 1 && diceResults[2] == 1 && diceResults[3] == 1 && diceResults[4] == 1)
                 {
                     highStraight = true;
                 }
@@ -368,6 +402,68 @@ namespace Yahtzee
         }
         #endregion
 
+        #region UpdateRadioBtnBox() Updates the checkbox to what was scored
+        private void UpdateRadioBtnBox()
+        {
+            if(onePair == true)
+            {
+                onePairRadioBtn.Show();
+            }
+            if(twoPair == true)
+            {
+                twoPairRadioBtn.Show();
+            }
+            if(threeKind == true)
+            {
+                threeKindRadioBtn.Show();
+            }
+            if(lowStraight == true)
+            {
+                lowStraightRadioBtn.Show();
+            }
+            if(highStraight == true)
+            {
+                highStraightRadioBtn.Show();
+            }
+            if(fullHouse == true)
+            {
+                fullHouseRadioBtn.Show();
+            }
+            if(yahtzee == true)
+            {
+                yahtzeeRadioBtn.Show();
+            }
+            if(chance == true)
+            {
+                chanceRadioBtn.Show();
+            }
+            if(ones == true)
+            {
+                onesRadioBtn.Show();
+            }
+            if(twos == true)
+            {
+                twosRadioBtn.Show();
+            }
+            if(threes == true)
+            {
+                threesRadioBtn.Show();
+            }
+            if(fours == true)
+            {
+                foursRadioBtn.Show();
+            }
+            if(fives == true)
+            {
+                fivesRadioBtn.Show();
+            }
+            if(sixes == true)
+            {
+                sixesRadioBtn.Show();
+            }
+        }
+        #endregion
+
 
         private void rollDiceBtn_Click(object sender, EventArgs e)
         {
@@ -383,9 +479,11 @@ namespace Yahtzee
                 InsertRollsIntoResults();
                 DiceCombination();
                 DiceScore();
-                nextPlayerBtn.Show();
+                UpdateRadioBtnBox();  
+                
                 doneBtn.Hide();
-                optionsGroupBox.Show();
+
+                nextPlayerBtn.Show(); // <--------- MOVE THIS ONE TO THE BUTTON EVENT THAT UPDATES CHOSEN COMBINATIONS INTO THE CHECKEDLISTBOX
 
             }
             else
@@ -398,8 +496,11 @@ namespace Yahtzee
         {
             ClearCombo();
             NextPlayer();
+            SetGroupBox();
             nextPlayerBtn.Hide();
             rollDiceBtn.Show();
+
+
         }
         #region All the pictureBox click events still have to come up with a way to turn this into a function
         private void pictureBox1_Click_1(object sender, EventArgs e)

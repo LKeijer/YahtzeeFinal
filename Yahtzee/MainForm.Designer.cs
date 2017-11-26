@@ -47,7 +47,22 @@
             this.nextPlayerBtn = new System.Windows.Forms.Button();
             this.diceScoreLbl = new System.Windows.Forms.Label();
             this.optionsGroupBox = new System.Windows.Forms.GroupBox();
+            this.chanceRadioBtn = new System.Windows.Forms.RadioButton();
+            this.fourKindRadioBtn = new System.Windows.Forms.RadioButton();
+            this.highStraightRadioBtn = new System.Windows.Forms.RadioButton();
+            this.lowStraightRadioBtn = new System.Windows.Forms.RadioButton();
+            this.fullHouseRadioBtn = new System.Windows.Forms.RadioButton();
+            this.threeKindRadioBtn = new System.Windows.Forms.RadioButton();
+            this.twoPairRadioBtn = new System.Windows.Forms.RadioButton();
+            this.onePairRadioBtn = new System.Windows.Forms.RadioButton();
             this.doneBtn = new System.Windows.Forms.Button();
+            this.sixesRadioBtn = new System.Windows.Forms.RadioButton();
+            this.fivesRadioBtn = new System.Windows.Forms.RadioButton();
+            this.foursRadioBtn = new System.Windows.Forms.RadioButton();
+            this.threesRadioBtn = new System.Windows.Forms.RadioButton();
+            this.twosRadioBtn = new System.Windows.Forms.RadioButton();
+            this.onesRadioBtn = new System.Windows.Forms.RadioButton();
+            this.yahtzeeRadioBtn = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -58,6 +73,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            this.optionsGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -279,13 +295,115 @@
             // 
             // optionsGroupBox
             // 
-            this.optionsGroupBox.Location = new System.Drawing.Point(177, 343);
+            this.optionsGroupBox.Controls.Add(this.sixesRadioBtn);
+            this.optionsGroupBox.Controls.Add(this.fivesRadioBtn);
+            this.optionsGroupBox.Controls.Add(this.foursRadioBtn);
+            this.optionsGroupBox.Controls.Add(this.threesRadioBtn);
+            this.optionsGroupBox.Controls.Add(this.twosRadioBtn);
+            this.optionsGroupBox.Controls.Add(this.onesRadioBtn);
+            this.optionsGroupBox.Controls.Add(this.yahtzeeRadioBtn);
+            this.optionsGroupBox.Controls.Add(this.chanceRadioBtn);
+            this.optionsGroupBox.Controls.Add(this.fourKindRadioBtn);
+            this.optionsGroupBox.Controls.Add(this.highStraightRadioBtn);
+            this.optionsGroupBox.Controls.Add(this.lowStraightRadioBtn);
+            this.optionsGroupBox.Controls.Add(this.fullHouseRadioBtn);
+            this.optionsGroupBox.Controls.Add(this.threeKindRadioBtn);
+            this.optionsGroupBox.Controls.Add(this.twoPairRadioBtn);
+            this.optionsGroupBox.Controls.Add(this.onePairRadioBtn);
+            this.optionsGroupBox.Location = new System.Drawing.Point(180, 343);
             this.optionsGroupBox.Name = "optionsGroupBox";
             this.optionsGroupBox.Size = new System.Drawing.Size(399, 184);
             this.optionsGroupBox.TabIndex = 18;
             this.optionsGroupBox.TabStop = false;
             this.optionsGroupBox.Text = "Possible combinations:";
-            this.optionsGroupBox.Visible = false;
+            // 
+            // chanceRadioBtn
+            // 
+            this.chanceRadioBtn.AutoSize = true;
+            this.chanceRadioBtn.Location = new System.Drawing.Point(230, 19);
+            this.chanceRadioBtn.Name = "chanceRadioBtn";
+            this.chanceRadioBtn.Size = new System.Drawing.Size(62, 17);
+            this.chanceRadioBtn.TabIndex = 7;
+            this.chanceRadioBtn.TabStop = true;
+            this.chanceRadioBtn.Text = "Chance";
+            this.chanceRadioBtn.UseVisualStyleBackColor = true;
+            // 
+            // fourKindRadioBtn
+            // 
+            this.fourKindRadioBtn.AutoSize = true;
+            this.fourKindRadioBtn.Location = new System.Drawing.Point(3, 155);
+            this.fourKindRadioBtn.Name = "fourKindRadioBtn";
+            this.fourKindRadioBtn.Size = new System.Drawing.Size(90, 17);
+            this.fourKindRadioBtn.TabIndex = 6;
+            this.fourKindRadioBtn.TabStop = true;
+            this.fourKindRadioBtn.Text = "Four of a kind";
+            this.fourKindRadioBtn.UseVisualStyleBackColor = true;
+            // 
+            // highStraightRadioBtn
+            // 
+            this.highStraightRadioBtn.AutoSize = true;
+            this.highStraightRadioBtn.Location = new System.Drawing.Point(3, 132);
+            this.highStraightRadioBtn.Name = "highStraightRadioBtn";
+            this.highStraightRadioBtn.Size = new System.Drawing.Size(84, 17);
+            this.highStraightRadioBtn.TabIndex = 5;
+            this.highStraightRadioBtn.TabStop = true;
+            this.highStraightRadioBtn.Text = "High straight";
+            this.highStraightRadioBtn.UseVisualStyleBackColor = true;
+            // 
+            // lowStraightRadioBtn
+            // 
+            this.lowStraightRadioBtn.AutoSize = true;
+            this.lowStraightRadioBtn.Location = new System.Drawing.Point(3, 109);
+            this.lowStraightRadioBtn.Name = "lowStraightRadioBtn";
+            this.lowStraightRadioBtn.Size = new System.Drawing.Size(82, 17);
+            this.lowStraightRadioBtn.TabIndex = 4;
+            this.lowStraightRadioBtn.TabStop = true;
+            this.lowStraightRadioBtn.Text = "Low straight";
+            this.lowStraightRadioBtn.UseVisualStyleBackColor = true;
+            // 
+            // fullHouseRadioBtn
+            // 
+            this.fullHouseRadioBtn.AutoSize = true;
+            this.fullHouseRadioBtn.Location = new System.Drawing.Point(3, 86);
+            this.fullHouseRadioBtn.Name = "fullHouseRadioBtn";
+            this.fullHouseRadioBtn.Size = new System.Drawing.Size(73, 17);
+            this.fullHouseRadioBtn.TabIndex = 3;
+            this.fullHouseRadioBtn.TabStop = true;
+            this.fullHouseRadioBtn.Text = "Full house";
+            this.fullHouseRadioBtn.UseVisualStyleBackColor = true;
+            // 
+            // threeKindRadioBtn
+            // 
+            this.threeKindRadioBtn.AutoSize = true;
+            this.threeKindRadioBtn.Location = new System.Drawing.Point(3, 63);
+            this.threeKindRadioBtn.Name = "threeKindRadioBtn";
+            this.threeKindRadioBtn.Size = new System.Drawing.Size(97, 17);
+            this.threeKindRadioBtn.TabIndex = 2;
+            this.threeKindRadioBtn.TabStop = true;
+            this.threeKindRadioBtn.Text = "Three of a kind";
+            this.threeKindRadioBtn.UseVisualStyleBackColor = true;
+            // 
+            // twoPairRadioBtn
+            // 
+            this.twoPairRadioBtn.AutoSize = true;
+            this.twoPairRadioBtn.Location = new System.Drawing.Point(3, 39);
+            this.twoPairRadioBtn.Name = "twoPairRadioBtn";
+            this.twoPairRadioBtn.Size = new System.Drawing.Size(66, 17);
+            this.twoPairRadioBtn.TabIndex = 1;
+            this.twoPairRadioBtn.TabStop = true;
+            this.twoPairRadioBtn.Text = "Two pair";
+            this.twoPairRadioBtn.UseVisualStyleBackColor = true;
+            // 
+            // onePairRadioBtn
+            // 
+            this.onePairRadioBtn.AutoSize = true;
+            this.onePairRadioBtn.Location = new System.Drawing.Point(3, 16);
+            this.onePairRadioBtn.Name = "onePairRadioBtn";
+            this.onePairRadioBtn.Size = new System.Drawing.Size(66, 17);
+            this.onePairRadioBtn.TabIndex = 0;
+            this.onePairRadioBtn.TabStop = true;
+            this.onePairRadioBtn.Text = "One Pair";
+            this.onePairRadioBtn.UseVisualStyleBackColor = true;
             // 
             // doneBtn
             // 
@@ -297,6 +415,83 @@
             this.doneBtn.UseVisualStyleBackColor = true;
             this.doneBtn.Visible = false;
             this.doneBtn.Click += new System.EventHandler(this.doneBtn_Click);
+            // 
+            // sixesRadioBtn
+            // 
+            this.sixesRadioBtn.AutoSize = true;
+            this.sixesRadioBtn.Location = new System.Drawing.Point(118, 155);
+            this.sixesRadioBtn.Name = "sixesRadioBtn";
+            this.sixesRadioBtn.Size = new System.Drawing.Size(38, 17);
+            this.sixesRadioBtn.TabIndex = 14;
+            this.sixesRadioBtn.TabStop = true;
+            this.sixesRadioBtn.Text = "6\'s";
+            this.sixesRadioBtn.UseVisualStyleBackColor = true;
+            // 
+            // fivesRadioBtn
+            // 
+            this.fivesRadioBtn.AutoSize = true;
+            this.fivesRadioBtn.Location = new System.Drawing.Point(118, 132);
+            this.fivesRadioBtn.Name = "fivesRadioBtn";
+            this.fivesRadioBtn.Size = new System.Drawing.Size(38, 17);
+            this.fivesRadioBtn.TabIndex = 13;
+            this.fivesRadioBtn.TabStop = true;
+            this.fivesRadioBtn.Text = "5\'s";
+            this.fivesRadioBtn.UseVisualStyleBackColor = true;
+            // 
+            // foursRadioBtn
+            // 
+            this.foursRadioBtn.AutoSize = true;
+            this.foursRadioBtn.Location = new System.Drawing.Point(118, 109);
+            this.foursRadioBtn.Name = "foursRadioBtn";
+            this.foursRadioBtn.Size = new System.Drawing.Size(38, 17);
+            this.foursRadioBtn.TabIndex = 12;
+            this.foursRadioBtn.TabStop = true;
+            this.foursRadioBtn.Text = "4\'s";
+            this.foursRadioBtn.UseVisualStyleBackColor = true;
+            // 
+            // threesRadioBtn
+            // 
+            this.threesRadioBtn.AutoSize = true;
+            this.threesRadioBtn.Location = new System.Drawing.Point(118, 86);
+            this.threesRadioBtn.Name = "threesRadioBtn";
+            this.threesRadioBtn.Size = new System.Drawing.Size(38, 17);
+            this.threesRadioBtn.TabIndex = 11;
+            this.threesRadioBtn.TabStop = true;
+            this.threesRadioBtn.Text = "3\'s";
+            this.threesRadioBtn.UseVisualStyleBackColor = true;
+            // 
+            // twosRadioBtn
+            // 
+            this.twosRadioBtn.AutoSize = true;
+            this.twosRadioBtn.Location = new System.Drawing.Point(118, 63);
+            this.twosRadioBtn.Name = "twosRadioBtn";
+            this.twosRadioBtn.Size = new System.Drawing.Size(38, 17);
+            this.twosRadioBtn.TabIndex = 10;
+            this.twosRadioBtn.TabStop = true;
+            this.twosRadioBtn.Text = "2\'s";
+            this.twosRadioBtn.UseVisualStyleBackColor = true;
+            // 
+            // onesRadioBtn
+            // 
+            this.onesRadioBtn.AutoSize = true;
+            this.onesRadioBtn.Location = new System.Drawing.Point(118, 39);
+            this.onesRadioBtn.Name = "onesRadioBtn";
+            this.onesRadioBtn.Size = new System.Drawing.Size(38, 17);
+            this.onesRadioBtn.TabIndex = 9;
+            this.onesRadioBtn.TabStop = true;
+            this.onesRadioBtn.Text = "1\'s";
+            this.onesRadioBtn.UseVisualStyleBackColor = true;
+            // 
+            // yahtzeeRadioBtn
+            // 
+            this.yahtzeeRadioBtn.AutoSize = true;
+            this.yahtzeeRadioBtn.Location = new System.Drawing.Point(118, 16);
+            this.yahtzeeRadioBtn.Name = "yahtzeeRadioBtn";
+            this.yahtzeeRadioBtn.Size = new System.Drawing.Size(64, 17);
+            this.yahtzeeRadioBtn.TabIndex = 8;
+            this.yahtzeeRadioBtn.TabStop = true;
+            this.yahtzeeRadioBtn.Text = "Yahtzee";
+            this.yahtzeeRadioBtn.UseVisualStyleBackColor = true;
             // 
             // YahtzeeMainForm
             // 
@@ -338,6 +533,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            this.optionsGroupBox.ResumeLayout(false);
+            this.optionsGroupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -365,6 +562,21 @@
         private System.Windows.Forms.Label diceScoreLbl;
         private System.Windows.Forms.GroupBox optionsGroupBox;
         private System.Windows.Forms.Button doneBtn;
+        private System.Windows.Forms.RadioButton chanceRadioBtn;
+        private System.Windows.Forms.RadioButton fourKindRadioBtn;
+        private System.Windows.Forms.RadioButton highStraightRadioBtn;
+        private System.Windows.Forms.RadioButton lowStraightRadioBtn;
+        private System.Windows.Forms.RadioButton fullHouseRadioBtn;
+        private System.Windows.Forms.RadioButton threeKindRadioBtn;
+        private System.Windows.Forms.RadioButton twoPairRadioBtn;
+        private System.Windows.Forms.RadioButton onePairRadioBtn;
+        private System.Windows.Forms.RadioButton sixesRadioBtn;
+        private System.Windows.Forms.RadioButton fivesRadioBtn;
+        private System.Windows.Forms.RadioButton foursRadioBtn;
+        private System.Windows.Forms.RadioButton threesRadioBtn;
+        private System.Windows.Forms.RadioButton twosRadioBtn;
+        private System.Windows.Forms.RadioButton onesRadioBtn;
+        private System.Windows.Forms.RadioButton yahtzeeRadioBtn;
     }
 }
 
