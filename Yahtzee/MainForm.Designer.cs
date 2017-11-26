@@ -63,6 +63,7 @@
             this.twosRadioBtn = new System.Windows.Forms.RadioButton();
             this.onesRadioBtn = new System.Windows.Forms.RadioButton();
             this.yahtzeeRadioBtn = new System.Windows.Forms.RadioButton();
+            this.userPicksBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -295,6 +296,7 @@
             // 
             // optionsGroupBox
             // 
+            this.optionsGroupBox.Controls.Add(this.userPicksBtn);
             this.optionsGroupBox.Controls.Add(this.sixesRadioBtn);
             this.optionsGroupBox.Controls.Add(this.fivesRadioBtn);
             this.optionsGroupBox.Controls.Add(this.foursRadioBtn);
@@ -493,6 +495,19 @@
             this.yahtzeeRadioBtn.Text = "Yahtzee";
             this.yahtzeeRadioBtn.UseVisualStyleBackColor = true;
             // 
+            // userPicksBtn
+            // 
+            this.userPicksBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.userPicksBtn.ForeColor = System.Drawing.Color.DimGray;
+            this.userPicksBtn.Location = new System.Drawing.Point(230, 63);
+            this.userPicksBtn.Name = "userPicksBtn";
+            this.userPicksBtn.Size = new System.Drawing.Size(163, 115);
+            this.userPicksBtn.TabIndex = 15;
+            this.userPicksBtn.Text = "I CHOOSE YOU!";
+            this.userPicksBtn.UseVisualStyleBackColor = true;
+            this.userPicksBtn.Visible = false;
+            this.userPicksBtn.Click += new System.EventHandler(this.userPicksBtn_Click);
+            // 
             // YahtzeeMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -577,6 +592,7 @@
         private System.Windows.Forms.RadioButton twosRadioBtn;
         private System.Windows.Forms.RadioButton onesRadioBtn;
         private System.Windows.Forms.RadioButton yahtzeeRadioBtn;
+        private System.Windows.Forms.Button userPicksBtn;
     }
 }
 

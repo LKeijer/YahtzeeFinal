@@ -162,13 +162,7 @@ namespace Yahtzee
         #region UserSelects() Lets the user choose which dice combination is to be saved in the corresponding checkedlistbox
         private void UserSelects()
         {
-            if(player1 == true)
-            {
-                if(onePair == true)
-                {
-                    checkedListBox1.
-                }
-            }
+
         }
         #endregion
 
@@ -308,8 +302,6 @@ namespace Yahtzee
         #region DiceCombination() sets possible combination to true
         private void DiceCombination()
         {
-            chance = true;
-
             for (int i = 0; i < diceResults.Length; i++)
             {
                 if (diceResults[i] == 2)
@@ -339,29 +331,6 @@ namespace Yahtzee
                 {
                     yahtzee = true;
                 }
-                // Possible combinations for the low straight
-                if (diceResults[0] == 1 && diceResults[1] == 1 && diceResults[2] == 1 && diceResults[3] == 1)
-                {
-                    lowStraight = true;
-                }
-                if (diceResults[4] == 1 && diceResults[1] == 1 && diceResults[2] == 1 && diceResults[3] == 1)
-                {
-                    lowStraight = true;
-                }
-                if (diceResults[2] == 1 && diceResults[3] == 1 && diceResults[4] == 1 && diceResults[5] == 1)
-                {
-                    lowStraight = true;
-                }
-                // Possible combinations for the high straight
-                if (diceResults[0] == 1 && diceResults[1] == 1 && diceResults[2] == 1 && diceResults[3] == 1 && diceResults[4] == 1)
-                {
-                    highStraight = true;
-                }
-                if (diceResults[5] == 1 && diceResults[1] == 1 && diceResults[2] == 1 && diceResults[3] == 1 && diceResults[4] == 1)
-                {
-                    highStraight = true;
-                }
-
                 if (diceResults[0] >= 1)
                     ones = true;
                 if (diceResults[1] >= 1)
@@ -375,6 +344,34 @@ namespace Yahtzee
                 if (diceResults[5] >= 1)
                     sixes = true;
             }
+
+            for(int i = 0; i < diceResults.Length; i++)
+            {
+                // Possible combinations for the low straight
+                if (diceResults[0] == 1 && diceResults[1] == 1 && diceResults[2] == 1 && diceResults[3] == 1)
+                {
+                    lowStraight = true;
+                }
+                if (diceResults[4] == 1 && diceResults[1] == 1 && diceResults[2] == 1 && diceResults[3] == 1)
+                {
+                    lowStraight = true;
+                }
+                if (diceResults[2] == 1 && diceResults[3] == 1 && diceResults[4] == 1 && diceResults[5] == 1)
+                {
+                    lowStraight = true;
+                }
+            }
+                // Possible combinations for the high straight
+            if (diceResults[0] == 1 && diceResults[1] == 1 && diceResults[2] == 1 && diceResults[3] == 1 && diceResults[4] == 1)
+            {
+                highStraight = true;
+            }
+            if (diceResults[5] == 1 && diceResults[1] == 1 && diceResults[2] == 1 && diceResults[3] == 1 && diceResults[4] == 1)
+            {
+                highStraight = true;
+            }
+            chance = true;
+
         }
         #endregion
 
@@ -400,6 +397,7 @@ namespace Yahtzee
 
 
         }
+
         #endregion
 
         #region UpdateRadioBtnBox() Updates the checkbox to what was scored
@@ -479,17 +477,23 @@ namespace Yahtzee
                 InsertRollsIntoResults();
                 DiceCombination();
                 DiceScore();
-                UpdateRadioBtnBox();  
-                
+                UpdateRadioBtnBox();
+                UserSelects();
+                userPicksBtn.Show();
                 doneBtn.Hide();
 
-                nextPlayerBtn.Show(); // <--------- MOVE THIS ONE TO THE BUTTON EVENT THAT UPDATES CHOSEN COMBINATIONS INTO THE CHECKEDLISTBOX
+
 
             }
             else
             {
                 MessageBox.Show("Please select all the dice");
             }
+        }
+
+        private void userPicksBtn_Click(object sender, EventArgs e)
+        {
+            nextPlayerBtn.Show(); 
         }
 
         private void nextPlayerBtn_Click(object sender, EventArgs e)
